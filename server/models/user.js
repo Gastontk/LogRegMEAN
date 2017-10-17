@@ -2,7 +2,8 @@ console.log('Loading user model')
 var mongoose = require('mongoose');
  var UserSchema = new mongoose.Schema({
  	email: {type: String,
-		required: true
+		required: true,
+		unique: true
 	}, 
  	first_name: {type:String, 
  		required:[true, 'First Name is required'],
