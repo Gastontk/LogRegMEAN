@@ -32,118 +32,125 @@
 	<meta charset="UTF-8">
 	<title>LoginRegistration</title>
 </head>
-<body>
+<body class = 'blockMe'>
 
 
-	<div ng-if='currentUser'>Welcome: {{currentUser.first_name.toUpperCase()}}  {{currentUser.last_name.toUpperCase()}}    <a ng-href="#" ng-click='logout()'>Logout</a></div>
-	<div class= 'errContainer'>
-		<div ng-if='!genError'> <h3 style='color: green;'>No Errors Reported</h3> </div>
-		<div ng-if='genError'> <h3 style='color: red;'>{{genError}}</h3> </div>
-	</div>
+	
 
 	<!-- <div ng-view=''></div> -->
-	<h1>THIS SITE IS UNDER CONSTRUCTION. EXPECT NOTHING/ANYTHING</h1>
+	<h1 style='max-width:80%;'>THIS SITE IS UNDER CONSTRUCTION. EXPECT NOTHING/ANYTHING</h1>
 	 <h3>REGISTER:</h3>
-	<div class = class = 'form-group '>
-			<form class = 'form'  name = 'registrationForm'  action="">
-				<ng-messages for="registrationForm.email.$error"  role='alert' style='color:maroon;'>
-					<h5 ng-message="required">We need your email address (required).</h5>
-					<h5 ng-message="email">That's not a valid email address.</h5>
+	<div ng-if='currentUser'>Welcome: {{currentUser.first_name.toUpperCase()}}  {{currentUser.last_name.toUpperCase()}}    <a ng-href="#" ng-click='logout()'>Logout</a></div>
+			<div class= 'errContainer'>
+				<div ng-if='!genError'> <h3 style='color: green;'>No Errors Reported</h3> </div>
+				<div ng-if='genError'> <h3 style='color: red;'>{{genError}}</h3> </div>
+			</div>
+<div class = 'register'>
+		<div class= 'form-group'>
+				<form class = 'form'  name = 'registrationForm'  action="">
+					<ng-messages for="registrationForm.email.$error"  role='alert' style='color:maroon;'>
+						<h5 ng-message="required">We need your email address (required).</h5>
+						<h5 ng-message="email">That's not a valid email address.</h5>
 
-				</ng-messages>
-				<div class='form-group'>
-					Email: <input placeholder='user@domain.com'class='form-control' ng-model='newReg.email' name = 'email' type="email" required>
-				</div>
-
-
-				<ng-messages for="registrationForm.first_name.$error"  role='alert' style='color:maroon;'>
-					<h5 ng-message="required">First Name Can't be blank.</h5>
-					<h5 ng-message="minlength">The Last Name must be at least 3 characters long.</h5>
-
-				</ng-messages>
-				<div class='form-group'>
-					First Name: <input placeholder='First Name' class='form-control'  ng-model='newReg.first_name'  name ='first_name' type="text" required ng-minlength='3'>
-				</div>
+					</ng-messages>
+					<div class='form-group'>
+						Email: <input placeholder='user@domain.com'class='form-control' ng-model='newReg.email' name = 'email' type="email" required>
+					</div>
 
 
-				<ng-messages for="registrationForm.last_name.$error"  role='alert' style='color:maroon;'>
-					<h5 ng-message="required">We need your email address (required).</h5>
-					<h5 ng-message="minlength">The Last Name must be at least 3 characters long.</h5>
-				</ng-messages>
-				<div class='form-group'>
-					Last Name: <input placeholder='Last Name' class='form-control'  ng-model='newReg.last_name' name='last_name'type="text" required ng-minlength='3'>
-				</div>
+					<ng-messages for="registrationForm.first_name.$error"  role='alert' style='color:maroon;'>
+						<h5 ng-message="required">First Name Can't be blank.</h5>
+						<h5 ng-message="minlength">The Last Name must be at least 3 characters long.</h5>
+
+					</ng-messages>
+					<div class='form-group'>
+						First Name: <input placeholder='First Name' class='form-control'  ng-model='newReg.first_name'  name ='first_name' type="text" required ng-minlength='3'>
+					</div>
 
 
-				<ng-messages for="registrationForm.password.$error"  role='alert' style='color:maroon;'>
-					<h5 ng-message="required">You must create a Password (required).</h5>
-					<h5 ng-message="minlength">The Password  must be at least 6 characters long.</h5>
-				</ng-messages>
-
-				<div class='form-group'>
-						<div ng-if='passwordsDontMatch'>
-							<h3 style='color: red;'>Passwords must match</h3>
-						</div>
-					Password: <input  placeholder='Password' class='form-control'  ng-model='newReg.password' type="password" name='password' required ng-minlength='6'>
-				</div>
+					<ng-messages for="registrationForm.last_name.$error"  role='alert' style='color:maroon;'>
+						<h5 ng-message="required">We need your email address (required).</h5>
+						<h5 ng-message="minlength">The Last Name must be at least 3 characters long.</h5>
+					</ng-messages>
+					<div class='form-group'>
+						Last Name: <input placeholder='Last Name' class='form-control'  ng-model='newReg.last_name' name='last_name'type="text" required ng-minlength='3'>
+					</div>
 
 
-				<ng-messages for="registrationForm.confirm_password.$error"  role='alert' style='color:maroon;'>
-					<h5 ng-message="required">Confirm Password is required.</h5>
-					<h5 ng-message="minlength">The Password Confirmation must be at least 6 characters long.</h5>
+					<ng-messages for="registrationForm.password.$error"  role='alert' style='color:maroon;'>
+						<h5 ng-message="required">You must create a Password (required).</h5>
+						<h5 ng-message="minlength">The Password  must be at least 6 characters long.</h5>
+					</ng-messages>
 
-				</ng-messages>
-
-				<div class='form-group'>
-						<div ng-if='passwordsDontMatch'>
-							<h3 style='color: red;'>{{passwordsDontMatch}}</h3>
-						</div>
-					Confirm Password: <input placeholder='Confirm Password' class='form-control'  ng-model='newReg.password_confirm'  name ='confirm_password' type="password"  required ng-minlength='6'>
-				</div>
+					<div class='form-group'>
+							<div ng-if='passwordsDontMatch'>
+								<h3 style='color: red;'>Passwords must match</h3>
+							</div>
+						Password: <input  placeholder='Password' class='form-control'  ng-model='newReg.password' type="password" name='password' required ng-minlength='6'>
+					</div>
 
 
-				<ng-messages for="registrationForm.birthday.$error"  role='alert' style='color:maroon;'>
-					<h5 ng-message="required">We need your email address (required).</h5>
-				</ng-messages>
+					<ng-messages for="registrationForm.confirm_password.$error"  role='alert' style='color:maroon;'>
+						<h5 ng-message="required">Confirm Password is required.</h5>
+						<h5 ng-message="minlength">The Password Confirmation must be at least 6 characters long.</h5>
 
-				<div class='form-group'>
-					Birthdate: <input placeholder="1900-12-26" name='birthday' ng-model ='newReg.birthday' type="text" onfocus="(this.type='date')" onblur ="(this.type='text')" required>
-				</div>
+					</ng-messages>
 
-				<input type="submit" ng-click ='registrationForm.$valid && register()'value='Create New User'>
+					<div class='form-group'>
+							<div ng-if='passwordsDontMatch'>
+								<h3 style='color: red;'>{{passwordsDontMatch}}</h3>
+							</div>
+						Confirm Password: <input placeholder='Confirm Password' class='form-control'  ng-model='newReg.password_confirm'  name ='confirm_password' type="password"  required ng-minlength='6'>
+					</div>
 
-			</form>
-	</div>
+
+					<ng-messages for="registrationForm.birthday.$error"  role='alert' style='color:maroon;'>
+						<h5 ng-message="required">We need your email address (required).</h5>
+					</ng-messages>
+
+					<div class='form-group'>
+						Birthdate: <input placeholder="1900-12-26" name='birthday' ng-model ='newReg.birthday' type="text" onfocus="(this.type='date')" onblur ="(this.type='text')" required>
+					</div>
+
+					<input type="submit" ng-click ='registrationForm.$valid && register()'value='Create New User'>
+
+				</form>
+		</div>
+</div >
+
+
 
 <br><br><br>
-<div class='form-group'>
-	<h3>Login:</h3>
-<div ng-if='loginError'> <h3 style='color: red;'>{{loginError}}</h3> </div>
+<div class = 'login'>
+	<div class='form-group'>
+		<h3>Login:</h3>
+	<div ng-if='loginError'> <h3 style='color: red;'>{{loginError}}</h3> </div>
 
-<form class='form' name = 'loginForm' >
-	<div class = 'form-group'>
-		Email: <input type="email" name ='email' ng-model= 'logIn.email'  required>
+	<form class='form' name = 'loginForm' >
+		<div class = 'form-group'>
+			Email: <input type="email" name ='email' ng-model= 'logIn.email'  required>
+		</div>
+		<br>
+		<div class = 'form-group'>
+			Password: <input name = 'password' ng-model='logIn.password' type="password" required>
+		</div>
+		<br>
+		<input type="submit" ng-click ='loginForm.$valid && login()'>
+
+
+
+
+	</form>
+
+
+
 	</div>
-
-	<div class = 'form-group'>
-		Password: <input name = 'password' ng-model='logIn.password' type="password" required>
-	</div>
-
-	<input type="submit" ng-click ='loginForm.$valid && login()'>
-
-
-
-
-</form>
-
-
-
-</div>
-<div>
+</div> <br><br><br>
+<!-- <div>
 	<ul ng-repeat='user in users track by $index'>
 		<li>{{user}}</li>
 	</ul>
-</div>
+</div> -->
 
 </body>
 </html>

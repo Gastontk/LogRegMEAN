@@ -8,7 +8,7 @@ var bcrypt = require('bcryptjs');
 function usersController(){
 
 	this.index = function(req, res){
-				console.log('req.session', req.session)
+		console.log('req.session', req.session)
 
 		console.log('In usersController. ')
 		// var testHash =bcrypt.hashSync('password', bcrypt.genSaltSync(8));
@@ -20,7 +20,7 @@ function usersController(){
 		// 			res.json(data);	}
 
 		// })
-		User.find({}, {'first_name':1, 'last_name':1, 'email':1, 'birthday':1, _id:0}, function(err, data){
+		User.find({}, function(err, data){
 			if(err){
 				console.log('Error getting users from DB', err);
 				res.json({data:{genError: err}})
@@ -29,7 +29,7 @@ function usersController(){
 				data.genError ='Users loaded successfully';
 			 	var response={}
 				response.users = data;
-					res.json(response);	
+				res.json(response);	
 
 		})
 

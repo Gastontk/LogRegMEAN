@@ -9,7 +9,7 @@ var session_params = {
 	cookie: {}
 }
 app.use(session(session_params));
-console.log(session)
+// console.log(session)
 
 
 

@@ -1,14 +1,36 @@
 form{
 	border: solid lightgrey 2px;
-	max-width: 40%;
+	/*max-width: 30%;*/
 	padding: 15px;
 	background-color: linen;
 }
 div{
-	display: inline;
+	/*display: inline-block;*/
 }
 .errContainer{
 /*	width: 30%;
 	height: 50%;*/
-	background-color: linen;
+	/*background-color: linen;*/
+}
+.login{
+	display:inline-block;
+	max-width: 40%;
+	margin-left: 40px;
+	margin-top: -110px;
+	/*float:right;*/
+}
+.register{
+	float:left;
+	max-width: 40%
+	/*display:inline-block;*/
+}
+body{
+
+	display: inline-block;
+}
+.errContainer{
+	max-width: 40%
+}
+.blockMe{
+	max-width: 80%;
 }
